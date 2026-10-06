@@ -21,7 +21,7 @@ Good morning. I'm Yousef, with Abdulwahab and Firas.
 
 Tayseer has already passed the 65% digital-adoption target nationally. But these four regions are stuck below it, and on their current pace they won't get there soon. Najran alone would need almost two years.
 
-Our recommendation puts every riyal where the gap will not close by itself: SAR 15 million for Najran, 9 for Northern Borders, and 8 each for Al-Baha and Jazan, released in two tranches with a checkpoint in June 2026.
+Our recommendation puts every riyal where the gap won't close by itself, released in two tranches with a checkpoint in June 2026.
 
 *[Next slide]*
 
@@ -31,7 +31,7 @@ Let's start with where we stand nationally.
 
 *[Point at the line]* This line is national digital adoption every month from January 2022 to December 2025. The dashed orange line is the 65% target.
 
-The trend is steady and positive. Adoption grew from about 54% to **66.2%** in December 2025, up 2.9 points in the last year alone. **We crossed the 65% target in August 2025.**
+Adoption grew steadily from about 54% to **66.2%** in December 2025. **We crossed the 65% target in August 2025.**
 
 So if we only looked at the national number, we'd say the job is done.
 
@@ -89,7 +89,7 @@ We compared three realistic ways to use the SAR 40 million, and judged each one 
 
 **Option B: focus on the four lagging regions**, with the money split by the size of each gap. 100% of the budget goes to regions that need 7 to 21 months.
 
-**Option C: one national campaign** to move branch and call-centre users to the app and the website. But we're already at 66% nationally, and most of a national campaign's reach lands in the large regions that are already above target.
+**Option C: one national campaign** to move users to the app and the website. But we're already at 66% nationally, and most of its reach lands in regions that are already above target.
 
 *[Next slide]*
 
@@ -102,8 +102,6 @@ We compared three realistic ways to use the SAR 40 million, and judged each one 
 What does the money buy? Three things. First, digitising the weakest journeys, Complaints and Permits. Second, assisted-digital desks inside branches, because branches have the lowest adoption of any channel: 53%, compared with 75% for the mobile app. Third, local awareness and onboarding in the four regions.
 
 The expected effect: **all four regions at 65% or above by December 2026.** For Najran, that means roughly doubling its pace, from 0.19 to 0.34 points a month. Without this investment, Najran reaches the target around September 2027.
-
-There's also a side benefit: a digital transaction costs about SAR 15, compared with about SAR 24 at a branch or call centre, and digital users rate the service higher.
 
 To be honest about uncertainty: our data shows *where* the gap is, but not exactly how many points each million buys. That's why we propose releasing the money in stages.
 
