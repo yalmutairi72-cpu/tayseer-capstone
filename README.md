@@ -72,7 +72,7 @@ Build steps and the extra views are in [`docs/tableau_dashboard_guide.md`](docs/
 ├── presentation/
 │   ├── Tayseer_Capstone_Executive_Story.pptx       # 7-slide deck with speaker notes
 │   ├── Tayseer_Capstone_Executive_Story.pdf
-│   └── build_deck.py                               # generates the deck from outputs/
+│   └── build/build_deck.js                         # generates the deck (native charts) from outputs/
 └── docs/
     ├── tableau_dashboard_guide.md
     └── qa_prep.md
@@ -83,14 +83,14 @@ Reproduce:
 ```bash
 python3 -m venv .venv && .venv/bin/pip install pandas matplotlib python-pptx
 .venv/bin/python analysis/analysis.py
-.venv/bin/python presentation/build_deck.py
+(cd presentation/build && npm install pptxgenjs && node build_deck.js)
 ```
 
 ## Tools
 
 - **Tableau Public**: interactive dashboard (main evidence)
 - **Python** (pandas, matplotlib): validation of the Tableau numbers, trend/pace analysis, charts
-- **python-pptx / PowerPoint**: the executive deck
+- **PptxGenJS / PowerPoint**: the executive deck (native, editable charts)
 - **Git & GitHub**: version control and submission
 
 ## Team

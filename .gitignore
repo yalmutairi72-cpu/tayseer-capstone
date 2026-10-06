@@ -3,3 +3,4 @@ __pycache__/
 .DS_Store
 ~$*
 docs/presentation_script.md
+node_modules/
