@@ -97,7 +97,7 @@ regions_txt = ", ".join(prio.index[:-1]) + " and " + prio.index[-1]
 # ---------- 1. BLUF / Ask ----------
 s = base(1, "Bottom line  ·  the ask",
          f"Approve SAR 40M for four regions, {regions_txt}, to close the last gap to 65%",
-         "Student 1  (0:00–0:30)",
+         "Yousef Almutairi  (0:00–0:30)",
          "Open with the ask, inside 30 seconds:\n"
          f"\"We are asking you to approve SAR 40 million for four regions: {regions_txt}. "
          "Nationally Tayseer is already above 65%, but these four regions will not reach it on their own any time soon. "
@@ -124,7 +124,7 @@ text(s, 0.55, 6.35, 12.2, 0.5,
 # ---------- 2. Situation ----------
 s = base(2, "Situation  ·  national status",
          f"Nationally, Tayseer is on track: {n_now:.1f}% digital adoption, above 65% since August 2025",
-         "Student 1  (0:30–1:15)",
+         "Yousef Almutairi  (0:30–1:15)",
          "Orient first: the line is national digital adoption by month, 2022 to 2025. The dashed orange line is the 65% target.\n"
          f"Then the message: adoption rose steadily from {nat.iloc[0]:.1f}% to {n_now:.1f}%, about +{n_now - n_prev:.1f} points a year, "
          "and crossed 65% in August 2025.\n"
@@ -137,7 +137,7 @@ kpi(s, 10.2, 5.1, 2.65, "Aug 2025", "Month the 65% target was crossed")
 # ---------- 3. Complication ----------
 s = base(3, "Complication  ·  regional gap",
          f"But {len(below)} of 13 regions are still below 65%, and the national average hides them",
-         "Student 2  (1:15–2:00)",
+         "Abdulwahab Alnassar  (1:15–2:00)",
          "Orient: each bar is a region's digital adoption in Dec 2025, sorted lowest to highest. Orange means below target, "
          "grey means on or above. The dashed line is 65%.\n"
          f"Message: {len(below)} of 13 regions are below target. Five large regions (Riyadh, Makkah, Eastern Province, Madinah, Qassim) "
@@ -159,7 +159,7 @@ text(s, 9.9, 2.2, 3.0, 4.5,
 c = cat.loc["Complaints"]
 s = base(4, "Evidence  ·  which gaps matter",
          "Four regions will close the gap on their own within 3 months; four will not, and Najran needs 21",
-         "Student 2  (2:00–4:00)",
+         "Abdulwahab Alnassar  (2:00–4:00)",
          "Orient: this chart shows only the 8 below-target regions. Bar length is the number of months each region needs to reach 65% "
          "if it keeps its 2025 pace. The labels show the gap in points and the monthly pace.\n"
          "Message 1: Al-Jouf, Hail, Tabuk and Asir are within 0.7 points and will cross within about 3 months. They don't need money.\n"
@@ -182,7 +182,7 @@ text(s, 10.05, 2.15, 2.65, 4.4,
 # ---------- 5. Options ----------
 s = base(5, "Options  ·  how to use SAR 40M",
          "We compared three ways to spend SAR 40M; only one aims every riyal at a gap that won't close by itself",
-         "Student 3  (4:00–5:00)",
+         "Firas Alnasser  (4:00–5:00)",
          "Walk through the three options left to right, using the same three questions for each.\n"
          "A, spread evenly across all 8 below-target regions at SAR 5M each: simple and seen as fair, but half the money goes to "
          "regions that cross 65% within about 3 months anyway, and Najran gets only SAR 5M.\n"
@@ -227,7 +227,7 @@ for r in range(1, len(rows) + 1):
 # ---------- 6. Recommendation ----------
 s = base(6, "Recommendation  ·  option B",
          "Recommend option B: weight the SAR 40M by gap and bring all four regions to 65% by December 2026",
-         "Student 3  (5:00–6:15)",
+         "Firas Alnasser  (5:00–6:15)",
          "Orient: left is the split; each region's share is proportional to the users who still need to switch to reach 65%.\n"
          f"What the money buys: (1) digitise Complaints and Permits, the weakest journeys; (2) assisted-digital desks in branches, "
          f"where adoption is lowest; (3) local awareness in these four regions.\n"
@@ -254,7 +254,7 @@ text(s, 7.3, 1.95, 5.6, 4.9,
 half = (alloc.adoption_pct + alloc.gap_pts / 2)
 s = base(7, "The ask  ·  next step",
          "Approve SAR 40M for the four regions today, released in two tranches with a June 2026 checkpoint",
-         "Student 3  (6:15–7:00)",
+         "Firas Alnasser  (6:15–7:00)",
          f"Restate the ask: \"We ask you to approve SAR 40 million for {regions_txt}: SAR 20 million now, "
          "and SAR 20 million in June 2026 if each region is at least halfway to 65%.\"\n"
          "The checkpoint values are on the slide and are tracked monthly on the Tableau dashboard.\n"

@@ -25,13 +25,13 @@ We used Tayseer's monthly service data (Jan 2022 to Dec 2025, 13 regions, 8 serv
 
 | Slide | Story beat | Takeaway title | Presenter | Time |
 |---|---|---|---|---|
-| 1 | BLUF / Ask | Approve SAR 40M for four regions to close the last gap to 65% | Student 1 | 0:00–0:30 |
-| 2 | Situation | Nationally on track: 66.2%, above 65% since Aug 2025 | Student 1 | 0:30–1:15 |
-| 3 | Complication | 8 of 13 regions are still below 65%; the national average hides them | Student 2 | 1:15–2:00 |
-| 4 | Evidence | Four regions self-close within 3 months; four don't, and Najran needs 21 | Student 2 | 2:00–4:00 |
-| 5 | Options | Three ways to spend SAR 40M; only one aims every riyal at a gap that won't close by itself | Student 3 | 4:00–5:00 |
-| 6 | Recommendation | Option B: weight by gap, bring all four to 65% by Dec 2026 | Student 3 | 5:00–6:15 |
-| 7 | Ask + Next step | Approve SAR 40M in two tranches with a June 2026 checkpoint | Student 3 | 6:15–7:00 |
+| 1 | BLUF / Ask | Approve SAR 40M for four regions to close the last gap to 65% | Yousef Almutairi | 0:00–0:30 |
+| 2 | Situation | Nationally on track: 66.2%, above 65% since Aug 2025 | Yousef Almutairi | 0:30–1:15 |
+| 3 | Complication | 8 of 13 regions are still below 65%; the national average hides them | Abdulwahab Alnassar | 1:15–2:00 |
+| 4 | Evidence | Four regions self-close within 3 months; four don't, and Najran needs 21 | Abdulwahab Alnassar | 2:00–4:00 |
+| 5 | Options | Three ways to spend SAR 40M; only one aims every riyal at a gap that won't close by itself | Firas Alnasser | 4:00–5:00 |
+| 6 | Recommendation | Option B: weight by gap, bring all four to 65% by Dec 2026 | Firas Alnasser | 5:00–6:15 |
+| 7 | Ask + Next step | Approve SAR 40M in two tranches with a June 2026 checkpoint | Firas Alnasser | 6:15–7:00 |
 
 The speaker script for each slide is in the PowerPoint **speaker notes**. Q&A preparation is in [`docs/qa_prep.md`](docs/qa_prep.md).
 
@@ -97,9 +97,9 @@ python3 -m venv .venv && .venv/bin/pip install pandas matplotlib python-pptx
 
 | Member | Role | GitHub |
 |---|---|---|
-| _Student 1_ | BLUF + Situation | @_username_ |
-| _Student 2_ | Complication + Evidence | @_username_ |
-| _Student 3_ | Options, Recommendation, Ask | @_username_ |
+| Yousef Almutairi (يوسف المطيري) | BLUF + Situation (slides 1–2) | [@yalmutairi72-cpu](https://github.com/yalmutairi72-cpu) |
+| Abdulwahab Alnassar (عبدالوهاب النصار) | Complication + Evidence (slides 3–4) | _@username_ |
+| Firas Alnasser (فراس الناصر) | Options, Recommendation, Ask (slides 5–7) | _@username_ |
 
 ## Acknowledgements
 
