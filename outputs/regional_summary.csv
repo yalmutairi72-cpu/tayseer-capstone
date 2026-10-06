@@ -1,0 +1,14 @@
+region,adoption_pct,unique_users,transactions,csat,cost_per_txn_sar,sla_breach_pct,adoption_dec_2024,yoy_change_pts,monthly_pace_pts,gap_pts,users_to_convert,months_to_target,status,allocation_sar_m
+Najran,60.86,7012.0,9329.0,3.92,19.1,7.81,58.31,2.55,0.19,4.14,290.04,21.38,Priority (structural gap),15.0
+Northern Borders,62.7,7944.0,10917.0,3.96,19.48,7.78,60.27,2.43,0.23,2.3,182.69,9.98,Priority (structural gap),9.0
+Al-Baha,62.78,7110.0,9905.0,3.88,19.24,8.33,59.09,3.69,0.24,2.22,157.75,9.18,Priority (structural gap),8.0
+Jazan,63.03,7777.0,10490.0,3.88,19.26,8.12,60.15,2.88,0.27,1.97,153.31,7.32,Priority (structural gap),8.0
+Asir,64.36,9941.0,13105.0,3.95,18.38,7.92,62.11,2.24,0.2,0.64,63.84,3.19,Near target (self-closing),0.0
+Tabuk,64.48,9000.0,12134.0,3.97,18.41,7.29,61.06,3.43,0.24,0.52,46.39,2.13,Near target (self-closing),0.0
+Hail,64.74,8912.0,12276.0,3.99,18.45,7.75,61.54,3.2,0.21,0.26,22.98,1.23,Near target (self-closing),0.0
+Al-Jouf,64.82,8787.0,11616.0,4.01,18.98,7.84,60.91,3.91,0.3,0.18,15.67,0.6,Near target (self-closing),0.0
+Qassim,66.11,10449.0,14181.0,3.98,17.66,7.33,63.66,2.44,0.24,0.0,0.0,0.0,On/Above Target,0.0
+Madinah,68.23,11658.0,15653.0,4.04,17.41,7.07,65.85,2.38,0.32,0.0,0.0,0.0,On/Above Target,0.0
+Eastern Province,68.7,12749.0,16783.0,3.94,17.6,7.44,66.52,2.18,0.26,0.0,0.0,0.0,On/Above Target,0.0
+Makkah,70.7,13121.0,17596.0,4.06,17.42,7.25,67.0,3.7,0.38,0.0,0.0,0.0,On/Above Target,0.0
+Riyadh,70.75,13357.0,17953.0,4.03,17.66,7.34,67.46,3.29,0.26,0.0,0.0,0.0,On/Above Target,0.0
