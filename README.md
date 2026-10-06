@@ -99,7 +99,7 @@ python3 -m venv .venv && .venv/bin/pip install pandas matplotlib python-pptx
 |---|---|---|
 | Yousef Almutairi  | BLUF + Situation (slides 1–2) | [@yalmutairi72-cpu](https://github.com/yalmutairi72-cpu) |
 | Abdulwahab Alnassar  | Complication + Evidence (slides 3–4) | [@Abdulwahab-Alnassar](https://github.com/Abdulwahab-Alnassar) |
-| Firas Alnasser  | Options, Recommendation, Ask (slides 5–7) | [@FerasNasser1](https://github.com/FerasNasser1) |
+| Feras Alnasser  | Options, Recommendation, Ask (slides 5–7) | [@FerasNasser1](https://github.com/FerasNasser1) |
 
 ## Acknowledgements
 
