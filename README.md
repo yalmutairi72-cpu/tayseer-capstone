@@ -5,7 +5,7 @@
 > **Big idea:** The national 65% digital-adoption target is met, but four regions are stuck below it. Put the full SAR 40M into Najran, Northern Borders, Al-Baha and Jazan so all four reach 65% by Dec 2026 instead of as late as 2027.
 
 📊 **Presentation:** [`presentation/Tayseer_Capstone_Executive_Story.pdf`](presentation/Tayseer_Capstone_Executive_Story.pdf) (editable: [`.pptx`](presentation/Tayseer_Capstone_Executive_Story.pptx))
-📈 **Tableau Public dashboard:** _<add your Tableau Public link here>_
+📈 **Tableau Public dashboard:** [Tayseer — Digital Adoption](https://public.tableau.com/app/profile/yousef.almutairi6140/viz/TayseerDigitalAdoption_17913014386410/TayseerDigitalAdoption)
 
 ---
 

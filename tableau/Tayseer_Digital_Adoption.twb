@@ -1,0 +1,146 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<workbook original-version='18.1' source-build='2026.2.3' source-platform='mac' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <preferences><preference name='ui.encoding.shelf.height' value='24' /><preference name='ui.shelf.height' value='26' /></preferences>
+  <datasources>
+    <datasource caption='tayseer_services' inline='true' name='federated.tayseer0data' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='tayseer_services' name='textscan.tayseer0csv'>
+            <connection class='textscan' directory="/Users/yousefalmutairi/tayseer-capstone/data" filename='tayseer_services.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.tayseer0csv' name='tayseer_services.csv' table='[tayseer_services#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','><column datatype='date' name='month' ordinal='0' /><column datatype='string' name='region' ordinal='1' /><column datatype='string' name='service_category' ordinal='2' /><column datatype='string' name='channel' ordinal='3' /><column datatype='integer' name='transactions' ordinal='4' /><column datatype='integer' name='unique_users' ordinal='5' /><column datatype='real' name='digital_adoption_pct' ordinal='6' /><column datatype='real' name='csat' ordinal='7' /><column datatype='real' name='avg_completion_min' ordinal='8' /><column datatype='real' name='first_time_resolution_pct' ordinal='9' /><column datatype='real' name='cost_per_txn_sar' ordinal='10' /><column datatype='real' name='sla_breach_pct' ordinal='11' /></columns>
+        </relation>
+      </connection>
+      <column caption="Digital Adoption %" datatype='real' default-format='n#,##0.0;-#,##0.0' name='[Calc_DA]' role='measure' type='quantitative'><calculation class='tableau' formula="ROUND(SUM([digital_adoption_pct] / 100 * [unique_users]) / SUM([unique_users]) * 100, 1)" /></column><column caption="Target Status" datatype='string' name='[Calc_Status]' role='dimension' type='nominal'><calculation class='tableau' formula='IF [Calc_DA] &lt; 65 THEN "Below Target" ELSE "On/Above Target" END' /></column><column caption="Latest Month" datatype='boolean' name='[Calc_Latest]' role='dimension' type='nominal'><calculation class='tableau' formula="[month] = #2025-12-01#" /></column><column caption="Adoption Dec 2025" datatype='real' default-format='n#,##0.0;-#,##0.0' name='[Calc_A25]' role='measure' type='quantitative'><calculation class='tableau' formula="{ FIXED [region] : SUM(IF [month] = #2025-12-01# THEN [digital_adoption_pct] / 100 * [unique_users] END) / SUM(IF [month] = #2025-12-01# THEN [unique_users] END) * 100 }" /></column><column caption="Adoption Dec 2024" datatype='real' default-format='n#,##0.0;-#,##0.0' name='[Calc_A24]' role='measure' type='quantitative'><calculation class='tableau' formula="{ FIXED [region] : SUM(IF [month] = #2024-12-01# THEN [digital_adoption_pct] / 100 * [unique_users] END) / SUM(IF [month] = #2024-12-01# THEN [unique_users] END) * 100 }" /></column><column caption="Monthly Pace" datatype='real' default-format='n#,##0.0;-#,##0.0' name='[Calc_Pace]' role='measure' type='quantitative'><calculation class='tableau' formula="([Calc_A25] - [Calc_A24]) / 12" /></column><column caption="Gap to Target" datatype='real' default-format='n#,##0.0;-#,##0.0' name='[Calc_Gap]' role='measure' type='quantitative'><calculation class='tableau' formula="MAX(65 - [Calc_A25], 0)" /></column><column caption="Months to Target" datatype='real' default-format='n#,##0.0;-#,##0.0' name='[Calc_MTT]' role='measure' type='quantitative'><calculation class='tableau' formula="ROUND([Calc_Gap] / [Calc_Pace], 0)" /></column><column caption="Below Target Region" datatype='boolean' name='[Calc_Below]' role='dimension' type='nominal'><calculation class='tableau' formula="[Calc_Gap] &gt; 0" /></column><column caption="Priority" datatype='string' name='[Calc_Priority]' role='dimension' type='nominal'><calculation class='tableau' formula='IF [Calc_MTT] &gt; 6 THEN "Priority (needs &gt; 6 months)" ELSE "Near target (self-closing)" END' /></column>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name="KPI">
+      <layout-options><title><formatted-text><run bold='true' fontcolor='#1b2a41' fontsize='13'>KPI</run></formatted-text></title></layout-options>
+      <table>
+        <view>
+          <datasources><datasource caption='tayseer_services' name='federated.tayseer0data' /></datasources>
+          <datasource-dependencies datasource='federated.tayseer0data'><column datatype='date' name='[month]' role='dimension' type='ordinal' /><column datatype='real' name='[digital_adoption_pct]' role='measure' type='quantitative' /><column datatype='integer' name='[unique_users]' role='measure' type='quantitative' /><column caption="Latest Month" datatype='boolean' name='[Calc_Latest]' role='dimension' type='nominal'><calculation class='tableau' formula="[month] = #2025-12-01#" /></column><column caption="Digital Adoption %" datatype='real' default-format='n#,##0.0;-#,##0.0' name='[Calc_DA]' role='measure' type='quantitative'><calculation class='tableau' formula="ROUND(SUM([digital_adoption_pct] / 100 * [unique_users]) / SUM([unique_users]) * 100, 1)" /></column><column-instance column='[Calc_DA]' derivation='User' name='[usr:Calc_DA:qk]' pivot='key' type='quantitative' /><column-instance column='[Calc_Latest]' derivation='None' name='[none:Calc_Latest:nk]' pivot='key' type='nominal' /></datasource-dependencies>
+          <filter class='categorical' column='[federated.tayseer0data].[none:Calc_Latest:nk]'><groupfilter function='member' level='[none:Calc_Latest:nk]' member='true' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' /></filter>
+          
+          <slices><column>[federated.tayseer0data].[none:Calc_Latest:nk]</column></slices>
+          <aggregation value='true' />
+        </view>
+        <style></style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view><breakdown value='auto' /></view>
+            <mark class='Text' />
+            <encodings><text column='[federated.tayseer0data].[usr:Calc_DA:qk]' /></encodings>
+            
+            <customized-label><formatted-text><run fontcolor='#1b2a41' fontsize='14' bold='true'>NATIONAL DIGITAL ADOPTION · DEC 2025</run><run>Æ&#10;</run><run fontcolor='#1b2a41' fontsize='44' bold='true'>&lt;[federated.tayseer0data].[usr:Calc_DA:qk]&gt;%</run><run>Æ&#10;</run><run fontcolor='#a0a7b4' fontsize='12'>Target: 65%</run></formatted-text></customized-label>
+          </pane>
+        </panes>
+        <rows></rows>
+        <cols></cols>
+      </table>
+    </worksheet>
+    <worksheet name="Regional Adoption">
+      <layout-options><title><formatted-text><run bold='true' fontcolor='#1b2a41' fontsize='13'>Digital adoption by region, Dec 2025: orange = below the 65% target</run></formatted-text></title></layout-options>
+      <table>
+        <view>
+          <datasources><datasource caption='tayseer_services' name='federated.tayseer0data' /></datasources>
+          <datasource-dependencies datasource='federated.tayseer0data'><column datatype='date' name='[month]' role='dimension' type='ordinal' /><column datatype='string' name='[region]' role='dimension' type='nominal' /><column datatype='real' name='[digital_adoption_pct]' role='measure' type='quantitative' /><column datatype='integer' name='[unique_users]' role='measure' type='quantitative' /><column caption="Latest Month" datatype='boolean' name='[Calc_Latest]' role='dimension' type='nominal'><calculation class='tableau' formula="[month] = #2025-12-01#" /></column><column caption="Target Status" datatype='string' name='[Calc_Status]' role='dimension' type='nominal'><calculation class='tableau' formula='IF [Calc_DA] &lt; 65 THEN "Below Target" ELSE "On/Above Target" END' /></column><column caption="Digital Adoption %" datatype='real' default-format='n#,##0.0;-#,##0.0' name='[Calc_DA]' role='measure' type='quantitative'><calculation class='tableau' formula="ROUND(SUM([digital_adoption_pct] / 100 * [unique_users]) / SUM([unique_users]) * 100, 1)" /></column><column-instance column='[Calc_DA]' derivation='User' name='[usr:Calc_DA:qk]' pivot='key' type='quantitative' /><column-instance column='[region]' derivation='None' name='[none:region:nk]' pivot='key' type='nominal' /><column-instance column='[Calc_Latest]' derivation='None' name='[none:Calc_Latest:nk]' pivot='key' type='nominal' /><column-instance column='[Calc_Status]' derivation='None' name='[none:Calc_Status:nk]' pivot='key' type='nominal' /></datasource-dependencies>
+          <filter class='categorical' column='[federated.tayseer0data].[none:Calc_Latest:nk]'><groupfilter function='member' level='[none:Calc_Latest:nk]' member='true' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' /></filter><filter class='categorical' column='[federated.tayseer0data].[none:region:nk]'><groupfilter function='level-members' level='[none:region:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' /></filter>
+          <computed-sort column='[federated.tayseer0data].[none:region:nk]' direction='ASC' using='[federated.tayseer0data].[usr:Calc_DA:qk]' />
+          <slices><column>[federated.tayseer0data].[none:Calc_Latest:nk]</column><column>[federated.tayseer0data].[none:region:nk]</column></slices>
+          <aggregation value='true' />
+        </view>
+        <style><style-rule element='mark'><encoding attr='color' field='[federated.tayseer0data].[none:Calc_Status:nk]' type='palette'><map to='#e4572e'><bucket>&quot;Below Target&quot;</bucket></map><map to='#a0a7b4'><bucket>&quot;On/Above Target&quot;</bucket></map></encoding></style-rule><style-rule element='refline'><format attr='stroke-color' id='refline0' value='#1b2a41' /><format attr='stroke-size' id='refline0' value='2' /><format attr='line-pattern-only' id='refline0' value='dashed' /></style-rule><style-rule element='mark'><format attr='mark-labels-show' value='true' /></style-rule></style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view><breakdown value='auto' /></view>
+            <mark class='Bar' />
+            <encodings><color column='[federated.tayseer0data].[none:Calc_Status:nk]' /><text column='[federated.tayseer0data].[usr:Calc_DA:qk]' /></encodings>
+            <reference-line axis-column='[federated.tayseer0data].[usr:Calc_DA:qk]' enable-instant-analytics='false' formula='constant' id='refline0' label='65% Target' label-type='custom' scope='per-table' value='65' value-column='[federated.tayseer0data].[usr:Calc_DA:qk]' z-order='1' />
+            
+          </pane>
+        </panes>
+        <rows>[federated.tayseer0data].[none:region:nk]</rows>
+        <cols>[federated.tayseer0data].[usr:Calc_DA:qk]</cols>
+      </table>
+    </worksheet>
+    <worksheet name="National Trend">
+      <layout-options><title><formatted-text><run bold='true' fontcolor='#1b2a41' fontsize='13'>National digital adoption by month: above 65% since Aug 2025</run></formatted-text></title></layout-options>
+      <table>
+        <view>
+          <datasources><datasource caption='tayseer_services' name='federated.tayseer0data' /></datasources>
+          <datasource-dependencies datasource='federated.tayseer0data'><column datatype='date' name='[month]' role='dimension' type='ordinal' /><column datatype='real' name='[digital_adoption_pct]' role='measure' type='quantitative' /><column datatype='integer' name='[unique_users]' role='measure' type='quantitative' /><column caption="Digital Adoption %" datatype='real' default-format='n#,##0.0;-#,##0.0' name='[Calc_DA]' role='measure' type='quantitative'><calculation class='tableau' formula="ROUND(SUM([digital_adoption_pct] / 100 * [unique_users]) / SUM([unique_users]) * 100, 1)" /></column><column-instance column='[Calc_DA]' derivation='User' name='[usr:Calc_DA:qk]' pivot='key' type='quantitative' /><column-instance column='[month]' derivation='Month-Trunc' name='[tmn:month:qk]' pivot='key' type='quantitative' /></datasource-dependencies>
+          
+          
+          <slices></slices>
+          <aggregation value='true' />
+        </view>
+        <style><style-rule element='refline'><format attr='stroke-color' id='refline0' value='#1b2a41' /><format attr='stroke-size' id='refline0' value='2' /><format attr='line-pattern-only' id='refline0' value='dashed' /></style-rule><style-rule element='mark'><encoding attr='color' type='custom' /><format attr='mark-color' value='#1b2a41' /></style-rule></style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view><breakdown value='auto' /></view>
+            <mark class='Line' />
+            <encodings></encodings>
+            <reference-line axis-column='[federated.tayseer0data].[usr:Calc_DA:qk]' enable-instant-analytics='false' formula='constant' id='refline0' label='65% Target' label-type='custom' scope='per-table' value='65' value-column='[federated.tayseer0data].[usr:Calc_DA:qk]' z-order='1' />
+            
+          </pane>
+        </panes>
+        <rows>[federated.tayseer0data].[usr:Calc_DA:qk]</rows>
+        <cols>[federated.tayseer0data].[tmn:month:qk]</cols>
+      </table>
+    </worksheet>
+    <worksheet name="Months to Target">
+      <layout-options><title><formatted-text><run bold='true' fontcolor='#1b2a41' fontsize='13'>Months to reach 65% at the 2025 pace: orange = needs more than 6 months</run></formatted-text></title></layout-options>
+      <table>
+        <view>
+          <datasources><datasource caption='tayseer_services' name='federated.tayseer0data' /></datasources>
+          <datasource-dependencies datasource='federated.tayseer0data'><column datatype='date' name='[month]' role='dimension' type='ordinal' /><column datatype='string' name='[region]' role='dimension' type='nominal' /><column datatype='real' name='[digital_adoption_pct]' role='measure' type='quantitative' /><column datatype='integer' name='[unique_users]' role='measure' type='quantitative' /><column caption="Below Target Region" datatype='boolean' name='[Calc_Below]' role='dimension' type='nominal'><calculation class='tableau' formula="[Calc_Gap] &gt; 0" /></column><column caption="Gap to Target" datatype='real' default-format='n#,##0.0;-#,##0.0' name='[Calc_Gap]' role='measure' type='quantitative'><calculation class='tableau' formula="MAX(65 - [Calc_A25], 0)" /></column><column caption="Adoption Dec 2025" datatype='real' default-format='n#,##0.0;-#,##0.0' name='[Calc_A25]' role='measure' type='quantitative'><calculation class='tableau' formula="{ FIXED [region] : SUM(IF [month] = #2025-12-01# THEN [digital_adoption_pct] / 100 * [unique_users] END) / SUM(IF [month] = #2025-12-01# THEN [unique_users] END) * 100 }" /></column><column caption="Priority" datatype='string' name='[Calc_Priority]' role='dimension' type='nominal'><calculation class='tableau' formula='IF [Calc_MTT] &gt; 6 THEN "Priority (needs &gt; 6 months)" ELSE "Near target (self-closing)" END' /></column><column caption="Months to Target" datatype='real' default-format='n#,##0.0;-#,##0.0' name='[Calc_MTT]' role='measure' type='quantitative'><calculation class='tableau' formula="ROUND([Calc_Gap] / [Calc_Pace], 0)" /></column><column caption="Monthly Pace" datatype='real' default-format='n#,##0.0;-#,##0.0' name='[Calc_Pace]' role='measure' type='quantitative'><calculation class='tableau' formula="([Calc_A25] - [Calc_A24]) / 12" /></column><column caption="Adoption Dec 2024" datatype='real' default-format='n#,##0.0;-#,##0.0' name='[Calc_A24]' role='measure' type='quantitative'><calculation class='tableau' formula="{ FIXED [region] : SUM(IF [month] = #2024-12-01# THEN [digital_adoption_pct] / 100 * [unique_users] END) / SUM(IF [month] = #2024-12-01# THEN [unique_users] END) * 100 }" /></column><column-instance column='[region]' derivation='None' name='[none:region:nk]' pivot='key' type='nominal' /><column-instance column='[Calc_MTT]' derivation='Avg' name='[avg:Calc_MTT:qk]' pivot='key' type='quantitative' /><column-instance column='[Calc_Priority]' derivation='None' name='[none:Calc_Priority:nk]' pivot='key' type='nominal' /><column-instance column='[Calc_Below]' derivation='None' name='[none:Calc_Below:nk]' pivot='key' type='nominal' /></datasource-dependencies>
+          <filter class='categorical' column='[federated.tayseer0data].[none:Calc_Below:nk]'><groupfilter function='member' level='[none:Calc_Below:nk]' member='true' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' /></filter>
+          <computed-sort column='[federated.tayseer0data].[none:region:nk]' direction='DESC' using='[federated.tayseer0data].[avg:Calc_MTT:qk]' />
+          <slices><column>[federated.tayseer0data].[none:Calc_Below:nk]</column></slices>
+          <aggregation value='true' />
+        </view>
+        <style><style-rule element='mark'><encoding attr='color' field='[federated.tayseer0data].[none:Calc_Priority:nk]' type='palette'><map to='#e4572e'><bucket>&quot;Priority (needs &gt; 6 months)&quot;</bucket></map><map to='#a0a7b4'><bucket>&quot;Near target (self-closing)&quot;</bucket></map></encoding><format attr='mark-labels-show' value='true' /></style-rule></style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view><breakdown value='auto' /></view>
+            <mark class='Bar' />
+            <encodings><color column='[federated.tayseer0data].[none:Calc_Priority:nk]' /><text column='[federated.tayseer0data].[avg:Calc_MTT:qk]' /></encodings>
+            
+            
+          </pane>
+        </panes>
+        <rows>[federated.tayseer0data].[none:region:nk]</rows>
+        <cols>[federated.tayseer0data].[avg:Calc_MTT:qk]</cols>
+      </table>
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard name='Tayseer — Digital Adoption'>
+      <style />
+      <size maxheight='900' maxwidth='1400' minheight='900' minwidth='1400' />
+      <zones>
+        <zone h='100000' id='1' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='6000' id='2' type-v2='text' w='100000' x='0' y='0'>
+            <formatted-text><run bold='true' fontcolor='#1b2a41' fontsize='20'>Tayseer — Digital Adoption</run><run fontcolor='#a0a7b4' fontsize='12'>   National target met; 8 of 13 regions still below 65%</run></formatted-text>
+          </zone>
+          <zone h='30000' id='3' name="KPI" w='30000' x='0' y='6000' ><zone-style><format attr='border-style' value='none' /><format attr='margin' value='4' /></zone-style></zone>
+          <zone h='30000' id='4' name="National Trend" w='70000' x='30000' y='6000' ><zone-style><format attr='border-style' value='none' /><format attr='margin' value='4' /></zone-style></zone>
+          <zone h='64000' id='5' name="Regional Adoption" w='55000' x='0' y='36000' ><zone-style><format attr='border-style' value='none' /><format attr='margin' value='4' /></zone-style></zone>
+          <zone h='54000' id='6' name="Months to Target" w='45000' x='55000' y='36000' ><zone-style><format attr='border-style' value='none' /><format attr='margin' value='4' /></zone-style></zone>
+          <zone h='10000' id='7' mode='checkdropdown' name='Regional Adoption' param='[federated.tayseer0data].[none:region:nk]' type-v2='filter' w='45000' x='55000' y='90000' />
+        </zone>
+      </zones>
+    </dashboard>
+  </dashboards>
+  <windows>
+    <window class='dashboard' maximized='true' name='Tayseer — Digital Adoption' />
+    <window class='worksheet' name='KPI' />
+    <window class='worksheet' name='Regional Adoption' />
+    <window class='worksheet' name='National Trend' />
+    <window class='worksheet' name='Months to Target' />
+  </windows>
+</workbook>
