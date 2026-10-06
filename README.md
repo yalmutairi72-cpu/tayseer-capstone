@@ -97,9 +97,9 @@ python3 -m venv .venv && .venv/bin/pip install pandas matplotlib python-pptx
 
 | Member | Role | GitHub |
 |---|---|---|
-| Yousef Almutairi (يوسف المطيري) | BLUF + Situation (slides 1–2) | [@yalmutairi72-cpu](https://github.com/yalmutairi72-cpu) |
-| Abdulwahab Alnassar (عبدالوهاب النصار) | Complication + Evidence (slides 3–4) | _@username_ |
-| Firas Alnasser (فراس الناصر) | Options, Recommendation, Ask (slides 5–7) | _@username_ |
+| Yousef Almutairi  | BLUF + Situation (slides 1–2) | [@yalmutairi72-cpu](https://github.com/yalmutairi72-cpu) |
+| Abdulwahab Alnassar  | Complication + Evidence (slides 3–4) | _@username_ |
+| Firas Alnasser  | Options, Recommendation, Ask (slides 5–7) | _@username_ |
 
 ## Acknowledgements
 
