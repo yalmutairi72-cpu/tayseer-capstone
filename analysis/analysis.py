@@ -49,9 +49,8 @@ crossed = national[national >= TARGET].index.min()
 
 # ---------- Regional status (latest month) ----------
 monthly = df.groupby(["month", "region"]).apply(adoption).unstack()
-recent = monthly[monthly.index >= latest - pd.DateOffset(months=11)]
-x = np.arange(len(recent))
-slope = recent.apply(lambda s: np.polyfit(x, s.values, 1)[0])
+# Pace = year-over-year change / 12, the same definition as the Tableau 'Monthly Pace' field
+slope = (monthly.loc[latest] - monthly.loc[latest - pd.DateOffset(months=12)]) / 12
 
 reg = last.groupby("region").apply(lambda g: pd.Series({
     "adoption_pct": adoption(g),

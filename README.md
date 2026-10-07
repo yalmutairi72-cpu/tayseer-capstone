@@ -17,7 +17,7 @@ We used Tayseer's monthly service data (Jan 2022 to Dec 2025, 13 regions, 8 serv
 |---|----------|---------|
 | Q1 | Is Tayseer on track nationally? | **Yes.** National adoption is **66.2%** (Dec 2025), up 2.9 pts in a year, and has been above 65% since **Aug 2025**. |
 | Q2 | Which regions are below 65%? | **8 of 13**: Najran (60.9%), Northern Borders (62.7%), Al-Baha (62.8%), Jazan (63.0%), Asir (64.4%), Tabuk (64.5%), Hail (64.7%), Al-Jouf (64.8%). |
-| Q3 | Where should the SAR 40M go? | At the 2025 pace, Asir, Tabuk, Hail and Al-Jouf reach 65% within about 3 months on their own. **Najran (21 months), Northern Borders (10), Al-Baha (9) and Jazan (7)** do not, so they get the money, weighted by gap: **SAR 15M / 9M / 8M / 8M**. |
+| Q3 | Where should the SAR 40M go? | At the 2025 pace, Asir, Tabuk, Hail and Al-Jouf reach 65% within about 3 months on their own. **Najran (19 months), Northern Borders (11), Jazan (8) and Al-Baha (7)** do not, so they get the money, weighted by gap: **SAR 15M / 9M / 8M / 8M**. |
 
 **The ask:** approve SAR 40M, release SAR 20M now and SAR 20M at a **June 2027 checkpoint**, where each region must be at least halfway to 65%.
 
@@ -28,7 +28,7 @@ We used Tayseer's monthly service data (Jan 2022 to Dec 2025, 13 regions, 8 serv
 | 1 | BLUF / Ask | Approve SAR 40M for four regions to close the last gap to 65% | Yousef Almutairi | 0:00–0:30 |
 | 2 | Situation | Nationally on track: 66.2%, above 65% since Aug 2025 | Yousef Almutairi | 0:30–1:15 |
 | 3 | Complication | 8 of 13 regions are still below 65%; the national average hides them | Abdulwahab Alnassar | 1:15–2:00 |
-| 4 | Evidence | Four regions self-close within 3 months; four don't, and Najran needs 21 | Abdulwahab Alnassar | 2:00–4:00 |
+| 4 | Evidence | Four regions self-close within 3 months; four don't, and Najran needs 19 | Abdulwahab Alnassar | 2:00–4:00 |
 | 5 | Options | Three ways to spend SAR 40M; only one aims every riyal at a gap that won't close by itself | Firas Alnasser | 4:00–5:00 |
 | 6 | Recommendation | Option B: weight by gap, bring all four to 65% by Dec 2027 | Firas Alnasser | 5:00–6:15 |
 | 7 | Ask + Next step | Approve SAR 40M in two tranches with a June 2027 checkpoint | Firas Alnasser | 6:15–7:00 |
@@ -56,7 +56,7 @@ Build steps and the optional extra views are in [`docs/tableau_dashboard_guide.m
 ## Method
 
 - **Adoption is user-weighted**, the same formula as the Tableau field, so slide numbers match the dashboard exactly.
-- **Pace** is the slope of a linear trend over each region's last 12 months (2025).
+- **Pace** = each region's change from Dec 2024 to Dec 2025 ÷ 12 (the Tableau `Monthly Pace` field).
 - **Months to target** = gap ÷ monthly pace. A region that needs more than 6 months is a **priority**.
 - **Allocation** is proportional to the *users still to convert* (gap × unique users) in the priority regions, rounded to SAR 1M.
 - **Timeline:** the data ends Dec 2025. The plan runs from approval (Q4 2026) to Dec 2027 and assumes each region starts from its latest measured level.

@@ -139,7 +139,7 @@ function legend(s, x, y, items) {
     { text: "SAR 20M now  ·  SAR 20M after a June 2027 checkpoint", options: { color: WHITE } },
   ], { x: 0.6, y: 6.38, w: 8, h: 0.4, margin: 0, isTextBox: true, fontFace: FONT, fontSize: 15 });
   s.addText("Yousef Almutairi  ·  Abdulwahab Alnassar  ·  Firas Alnasser", { x: 7.7, y: 6.38, w: 5.03, h: 0.4, margin: 0, align: "right", isTextBox: true, fontFace: FONT, fontSize: 12, color: "8FA3BF" });
-  s.addNotes("PRESENTER: Yousef (0:00–0:30)\nState the ask in the first 30 seconds: approve SAR 40M for Najran, Northern Borders, Al-Baha and Jazan. National is above 65%, these four are stuck; Najran would need almost two years. Money released in two tranches with a June 2027 checkpoint.");
+  s.addNotes("PRESENTER: Yousef (0:00–0:30)\nState the ask in the first 30 seconds: approve SAR 40M for Najran, Northern Borders, Al-Baha and Jazan. National is above 65%, these four are stuck; Najran would need over a year and a half. Money released in two tranches with a June 2027 checkpoint.");
 }
 
 // ============ 2. SITUATION ============
@@ -194,7 +194,7 @@ function legend(s, x, y, items) {
 // ============ 4. EVIDENCE ============
 {
   const s = pres.addSlide({ masterName: "LIGHT" });
-  header(s, 3, "Evidence  ·  which gaps matter", "Four regions will reach 65% on their own within 3 months; four will not, and Najran needs 21");
+  header(s, 3, "Evidence  ·  which gaps matter", "Four regions will reach 65% on their own within 3 months; four will not, and Najran needs 19");
   const b = [...below].sort((p, q) => q.months_to_target - p.months_to_target);  // bars draw bottom-up
   const names = b.map(r => r.region);
   const isP = r => r.status.startsWith("Priority");
@@ -216,9 +216,9 @@ function legend(s, x, y, items) {
   s.addShape(pres.shapes.LINE, { x: x + 0.25, y: 4.6, w: w - 0.5, h: 0, line: { color: LINE, width: 1 } });
   s.addText([
     { text: `+${A.Najran.monthly_pace_pts.toFixed(2)} pts / month`, options: { bold: true, color: INK, fontSize: 20, breakLine: true } },
-    { text: "Najran's pace: the slowest of any region, with the biggest gap", options: { color: MUTED, fontSize: 13 } },
+    { text: "Najran: biggest gap, below-average pace", options: { color: MUTED, fontSize: 13 } },
   ], { x: x + 0.25, y: 4.8, w: w - 0.5, h: 1.6, margin: 0, isTextBox: true, valign: "top", fontFace: FONT, paraSpaceAfter: 4 });
-  s.addNotes("PRESENTER: Abdulwahab (2:00–4:00)\nOrient: only the 8 below-target regions; bar = months to reach 65% at the 2025 pace.\nGrey four (Al-Jouf, Hail, Tabuk, Asir) cross within ~3 months on their own. Orange four need 7–21 months; Najran has the biggest gap and slowest pace.\nRight panel: Complaints is the weakest journey (56.8% vs 62.1% nationally).\nMethod: pace = linear trend of 2025; adoption is user-weighted, same as the Tableau field.");
+  s.addNotes("PRESENTER: Abdulwahab (2:00–4:00)\nOrient: only the 8 below-target regions; bar = months to reach 65% at the 2025 pace.\nGrey four (Al-Jouf, Hail, Tabuk, Asir) cross within ~3 months on their own. Orange four need 7–19 months; Najran has the biggest gap and slowest pace.\nRight panel: Complaints is the weakest journey (56.8% vs 62.1% nationally).\nMethod: pace = change Dec 2024 → Dec 2025 ÷ 12; same fields as the Tableau Months to Target sheet.");
 }
 
 // ============ 5. OPTIONS ============
@@ -229,7 +229,7 @@ function legend(s, x, y, items) {
     { k: "A", name: "Spread evenly", what: "SAR 5M to each of the 8 regions below 65%",
       rows: [["✗", "Half the budget (SAR 20M) goes to regions closing in ≤ 3 months"], ["✗", "Najran gets only SAR 5M"], ["✗", "Too thin to change pace anywhere"]] },
     { k: "B", name: "Focus on the 4 laggards", what: "SAR 40M split across Najran, Northern Borders, Al-Baha, Jazan by gap size", rec: true,
-      rows: [["✓", "100% of the budget reaches regions needing 7–21 months"], ["✓", `Najran gets SAR ${A.Najran.allocation_sar_m}M, sized to its gap`], ["!", "Depends on local delivery, so staged with a checkpoint"]] },
+      rows: [["✓", "100% of the budget reaches regions needing 7–19 months"], ["✓", `Najran gets SAR ${A.Najran.allocation_sar_m}M, sized to its gap`], ["!", "Depends on local delivery, so staged with a checkpoint"]] },
     { k: "C", name: "National campaign", what: "One national push to move branch & call-centre users to app / web",
       rows: [["✗", "National is already 66%; reach lands in on-target regions"], ["✗", "Lifts the average again, leaves the gaps"], ["✓", "Simple to run"]] },
   ];
@@ -294,11 +294,11 @@ function legend(s, x, y, items) {
   s.addText("EXPECTED EFFECT", { x: 5.45, y: 5.3, w: 3, h: 0.28, margin: 0, isTextBox: true, fontFace: FONT, fontSize: 10, bold: true, color: ORANGE, charSpacing: 2 });
   s.addText([{ text: "Dec 2027", options: { fontSize: 26, bold: true, color: GREEN, breakLine: true } }, { text: "all four regions ≥ 65%", options: { fontSize: 12, color: MUTED } }],
     { x: 5.45, y: 5.6, w: 2.3, h: 1.0, margin: 0, isTextBox: true, fontFace: FONT, valign: "top" });
-  s.addText([{ text: "Sep 2028", options: { fontSize: 26, bold: true, color: MUTED, breakLine: true } }, { text: "Najran at today's pace", options: { fontSize: 12, color: MUTED } }],
+  s.addText([{ text: "Jul 2028", options: { fontSize: 26, bold: true, color: MUTED, breakLine: true } }, { text: "Najran at today's pace", options: { fontSize: 12, color: MUTED } }],
     { x: 7.85, y: 5.6, w: 2.2, h: 1.0, margin: 0, isTextBox: true, fontFace: FONT, valign: "top" });
   s.addText([{ text: `${A.Najran.monthly_pace_pts.toFixed(2)} → ${A.Najran.pace_needed_12m.toFixed(2)}`, options: { fontSize: 26, bold: true, color: INK, breakLine: true } }, { text: "Najran pts / month needed", options: { fontSize: 12, color: MUTED } }],
     { x: 10.15, y: 5.6, w: 2.5, h: 1.0, margin: 0, isTextBox: true, fontFace: FONT, valign: "top" });
-  s.addNotes("PRESENTER: Firas (5:00–6:15)\nSplit follows users still to convert: Najran 15, Northern Borders 9, Al-Baha 8, Jazan 8.\nThe money buys: digitise Complaints & Permits; assisted-digital desks in branches (53% vs 75% app); local onboarding.\nEffect: all four at 65% by Dec 2027; Najran must roughly double its pace (0.19 → 0.34 pts/month), otherwise ~Sep 2028.\nUncertainty: data shows where the gap is, not points per million, hence staged release.");
+  s.addNotes("PRESENTER: Firas (5:00–6:15)\nSplit follows users still to convert: Najran 15, Northern Borders 9, Al-Baha 8, Jazan 8.\nThe money buys: digitise Complaints & Permits; assisted-digital desks in branches (53% vs 75% app); local onboarding.\nEffect: all four at 65% by Dec 2027; Najran must lift its pace ~60% (0.21 → 0.34 pts/month), otherwise ~Jul 2028.\nUncertainty: data shows where the gap is, not points per million, hence staged release.");
 }
 
 // ============ 7. ASK + NEXT STEP ============
@@ -307,7 +307,7 @@ function legend(s, x, y, items) {
   header(s, 6, "The ask  ·  next step", "Approve SAR 40M today, released in two tranches with a June 2027 checkpoint", true);
   // Timeline
   const pts = [
-    ["Today", "Approve SAR 40M", "Release tranche 1: SAR 20M"],
+    ["Q4 2026", "Approve SAR 40M", "Release tranche 1: SAR 20M"],
     ["Q1 – Q2 2027", "Deliver", "Complaints & Permits fixes, branch desks"],
     ["June 2027", "Checkpoint", "Each region ≥ halfway to 65% → tranche 2"],
     ["Dec 2027", "Target", "All four regions ≥ 65%"],
