@@ -9,7 +9,7 @@ The target was national, but the 8 regions below it serve real citizens. Najran 
 Asir, Tabuk, Hail and Al-Jouf are within 0.7 pts and will cross 65% in about 1 to 3 months at their 2025 pace. Funding them puts half the budget where the gap closes anyway (slide 4).
 
 **"How do you know SAR 40M is enough?"**
-We don't. The data shows where the gap is, not how much a point of adoption costs. That's why only SAR 20M is released now, with a June 2026 checkpoint at halfway to 65%. If a region misses it, its second tranche is re-targeted.
+We don't. The data shows where the gap is, not how much a point of adoption costs. That's why only SAR 20M is released now, with a June 2027 checkpoint at halfway to 65%. If a region misses it, its second tranche is re-targeted.
 
 **"Why does Najran get SAR 15M?"**
 The split is proportional to users still to convert (gap × users). Najran has the biggest gap (4.1 pts) *and* the slowest pace (+0.19 pts a month), so it needs to roughly double its pace.

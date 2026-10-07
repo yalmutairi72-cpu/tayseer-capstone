@@ -120,7 +120,7 @@ function legend(s, x, y, items) {
     x: 0.6, y: 0.95, w: 11.2, h: 1.55, margin: 0, isTextBox: true, valign: "top", fontFace: FONT, fontSize: 38, bold: true, color: WHITE });
   s.addText([
     { text: "Big idea  ", options: { bold: true, color: ORANGE } },
-    { text: "Tayseer has met the 65% target nationally, but four regions are stuck below it. Putting the full SAR 40M there brings all four to 65% by Dec 2026 instead of as late as 2027.", options: { color: ICE } },
+    { text: "Tayseer has met the 65% target nationally, but four regions are stuck below it. Putting the full SAR 40M there brings all four to 65% by Dec 2027 instead of as late as 2028.", options: { color: ICE } },
   ], { x: 0.6, y: 2.6, w: 11.4, h: 0.8, margin: 0, isTextBox: true, fontFace: FONT, fontSize: 16, valign: "top" });
 
   const cw = 2.86, gap = 0.22;
@@ -136,10 +136,10 @@ function legend(s, x, y, items) {
   });
   s.addText([
     { text: "Release  ", options: { bold: true, color: ORANGE } },
-    { text: "SAR 20M now  ·  SAR 20M after a June 2026 checkpoint", options: { color: WHITE } },
+    { text: "SAR 20M now  ·  SAR 20M after a June 2027 checkpoint", options: { color: WHITE } },
   ], { x: 0.6, y: 6.38, w: 8, h: 0.4, margin: 0, isTextBox: true, fontFace: FONT, fontSize: 15 });
   s.addText("Yousef Almutairi  ·  Abdulwahab Alnassar  ·  Firas Alnasser", { x: 7.7, y: 6.38, w: 5.03, h: 0.4, margin: 0, align: "right", isTextBox: true, fontFace: FONT, fontSize: 12, color: "8FA3BF" });
-  s.addNotes("PRESENTER: Yousef (0:00–0:30)\nState the ask in the first 30 seconds: approve SAR 40M for Najran, Northern Borders, Al-Baha and Jazan. National is above 65%, these four are stuck; Najran would need almost two years. Money released in two tranches with a June 2026 checkpoint.");
+  s.addNotes("PRESENTER: Yousef (0:00–0:30)\nState the ask in the first 30 seconds: approve SAR 40M for Najran, Northern Borders, Al-Baha and Jazan. National is above 65%, these four are stuck; Najran would need almost two years. Money released in two tranches with a June 2027 checkpoint.");
 }
 
 // ============ 2. SITUATION ============
@@ -261,7 +261,7 @@ function legend(s, x, y, items) {
 // ============ 6. RECOMMENDATION ============
 {
   const s = pres.addSlide({ masterName: "LIGHT" });
-  header(s, 5, "Recommendation  ·  option B", "Weight the SAR 40M by gap size and bring all four regions to 65% by December 2026");
+  header(s, 5, "Recommendation  ·  option B", "Weight the SAR 40M by gap size and bring all four regions to 65% by December 2027");
   s.addChart(pres.charts.DOUGHNUT, [{ name: "Allocation", labels: prio.map(p => p.region), values: prio.map(p => p.allocation_sar_m) }], {
     x: 0.45, y: 2.1, w: 4.6, h: 4.6, holeSize: 62, chartColors: [ORANGE, "F0915E", "F5B48E", "F9D2BB"],
     showPercent: false, showValue: false, showLegend: false, dataBorder: { pt: 2, color: WHITE }, objectName: "Allocation doughnut",
@@ -292,25 +292,25 @@ function legend(s, x, y, items) {
   // Expected effect band
   s.addShape(pres.shapes.ROUNDED_RECTANGLE, { x: 5.2, y: 5.15, w: 7.53, h: 1.55, rectRadius: 0.08, fill: { color: TINT }, line: { color: TINT } });
   s.addText("EXPECTED EFFECT", { x: 5.45, y: 5.3, w: 3, h: 0.28, margin: 0, isTextBox: true, fontFace: FONT, fontSize: 10, bold: true, color: ORANGE, charSpacing: 2 });
-  s.addText([{ text: "Dec 2026", options: { fontSize: 26, bold: true, color: GREEN, breakLine: true } }, { text: "all four regions ≥ 65%", options: { fontSize: 12, color: MUTED } }],
+  s.addText([{ text: "Dec 2027", options: { fontSize: 26, bold: true, color: GREEN, breakLine: true } }, { text: "all four regions ≥ 65%", options: { fontSize: 12, color: MUTED } }],
     { x: 5.45, y: 5.6, w: 2.3, h: 1.0, margin: 0, isTextBox: true, fontFace: FONT, valign: "top" });
-  s.addText([{ text: "Sep 2027", options: { fontSize: 26, bold: true, color: MUTED, breakLine: true } }, { text: "Najran at today's pace", options: { fontSize: 12, color: MUTED } }],
+  s.addText([{ text: "Sep 2028", options: { fontSize: 26, bold: true, color: MUTED, breakLine: true } }, { text: "Najran at today's pace", options: { fontSize: 12, color: MUTED } }],
     { x: 7.85, y: 5.6, w: 2.2, h: 1.0, margin: 0, isTextBox: true, fontFace: FONT, valign: "top" });
-  s.addText([{ text: `${A.Najran.monthly_pace_pts.toFixed(2)} → ${A.Najran.pace_needed_by_dec26.toFixed(2)}`, options: { fontSize: 26, bold: true, color: INK, breakLine: true } }, { text: "Najran pts / month needed", options: { fontSize: 12, color: MUTED } }],
+  s.addText([{ text: `${A.Najran.monthly_pace_pts.toFixed(2)} → ${A.Najran.pace_needed_12m.toFixed(2)}`, options: { fontSize: 26, bold: true, color: INK, breakLine: true } }, { text: "Najran pts / month needed", options: { fontSize: 12, color: MUTED } }],
     { x: 10.15, y: 5.6, w: 2.5, h: 1.0, margin: 0, isTextBox: true, fontFace: FONT, valign: "top" });
-  s.addNotes("PRESENTER: Firas (5:00–6:15)\nSplit follows users still to convert: Najran 15, Northern Borders 9, Al-Baha 8, Jazan 8.\nThe money buys: digitise Complaints & Permits; assisted-digital desks in branches (53% vs 75% app); local onboarding.\nEffect: all four at 65% by Dec 2026; Najran must roughly double its pace (0.19 → 0.34 pts/month), otherwise ~Sep 2027.\nUncertainty: data shows where the gap is, not points per million, hence staged release.");
+  s.addNotes("PRESENTER: Firas (5:00–6:15)\nSplit follows users still to convert: Najran 15, Northern Borders 9, Al-Baha 8, Jazan 8.\nThe money buys: digitise Complaints & Permits; assisted-digital desks in branches (53% vs 75% app); local onboarding.\nEffect: all four at 65% by Dec 2027; Najran must roughly double its pace (0.19 → 0.34 pts/month), otherwise ~Sep 2028.\nUncertainty: data shows where the gap is, not points per million, hence staged release.");
 }
 
 // ============ 7. ASK + NEXT STEP ============
 {
   const s = pres.addSlide({ masterName: "DARK" });
-  header(s, 6, "The ask  ·  next step", "Approve SAR 40M today, released in two tranches with a June 2026 checkpoint", true);
+  header(s, 6, "The ask  ·  next step", "Approve SAR 40M today, released in two tranches with a June 2027 checkpoint", true);
   // Timeline
   const pts = [
     ["Today", "Approve SAR 40M", "Release tranche 1: SAR 20M"],
-    ["Q1 – Q2 2026", "Deliver", "Complaints & Permits fixes, branch desks"],
-    ["June 2026", "Checkpoint", "Each region ≥ halfway to 65% → tranche 2"],
-    ["Dec 2026", "Target", "All four regions ≥ 65%"],
+    ["Q1 – Q2 2027", "Deliver", "Complaints & Permits fixes, branch desks"],
+    ["June 2027", "Checkpoint", "Each region ≥ halfway to 65% → tranche 2"],
+    ["Dec 2027", "Target", "All four regions ≥ 65%"],
   ];
   const x0 = 0.9, x1 = 12.4, ty = 2.75, step = (x1 - x0) / (pts.length - 1);
   s.addShape(pres.shapes.LINE, { x: x0, y: ty, w: x1 - x0, h: 0, line: { color: "3A5A85", width: 2 } });
@@ -324,10 +324,10 @@ function legend(s, x, y, items) {
       { x: tx, y: ty + 0.3, w: tw, h: 0.95, align: al, margin: 0, isTextBox: true, valign: "top", fontFace: FONT });
   });
   // Checkpoint table
-  s.addText("June 2026 checkpoint: halfway to 65%", { x: 0.6, y: 4.3, w: 6, h: 0.35, margin: 0, isTextBox: true, fontFace: FONT, fontSize: 15, bold: true, color: WHITE });
+  s.addText("June 2027 checkpoint: halfway to 65%", { x: 0.6, y: 4.3, w: 6, h: 0.35, margin: 0, isTextBox: true, fontFace: FONT, fontSize: 15, bold: true, color: WHITE });
   const rows = [[
     { text: "Region", options: { bold: true, color: "8FA3BF" } }, { text: "Dec 2025", options: { bold: true, color: "8FA3BF", align: "right" } },
-    { text: "Must reach by Jun 2026", options: { bold: true, color: "8FA3BF", align: "right" } }, { text: "Tranche 2", options: { bold: true, color: "8FA3BF", align: "right" } }]];
+    { text: "Must reach by Jun 2027", options: { bold: true, color: "8FA3BF", align: "right" } }, { text: "Tranche 2", options: { bold: true, color: "8FA3BF", align: "right" } }]];
   [...alloc].sort((a, b) => a.adoption_pct - b.adoption_pct).forEach(p => rows.push([
     { text: p.region, options: { color: WHITE } }, { text: `${f1(p.adoption_pct)}%`, options: { color: "AFC0D6", align: "right" } },
     { text: `≥ ${f1(p.adoption_pct + p.gap_pts / 2)}%`, options: { color: ORANGE, bold: true, align: "right" } },
@@ -340,7 +340,7 @@ function legend(s, x, y, items) {
     { text: "Approve SAR 40M", options: { fontSize: 30, bold: true, color: WHITE, breakLine: true } },
     { text: "Nationally we hit 65%. This makes sure every region does.", options: { fontSize: 14, color: WHITE } },
   ], { x: 8.75, y: 4.48, w: 3.7, h: 2.0, margin: 0, isTextBox: true, valign: "top", fontFace: FONT, paraSpaceAfter: 6 });
-  s.addNotes("PRESENTER: Firas (6:15–7:00)\nRestate the ask: approve SAR 40M for Najran, Northern Borders, Al-Baha and Jazan; SAR 20M now, SAR 20M in June 2026 if each region is at least halfway to 65%. Tracked monthly on the Tableau dashboard; a missed checkpoint re-targets that region's tranche.\nClose: Nationally we hit 65%. This decision makes sure every region does.");
+  s.addNotes("PRESENTER: Firas (6:15–7:00)\nRestate the ask: approve SAR 40M for Najran, Northern Borders, Al-Baha and Jazan; SAR 20M now, SAR 20M in June 2027 if each region is at least halfway to 65%. Tracked monthly on the Tableau dashboard; a missed checkpoint re-targets that region's tranche.\nClose: Nationally we hit 65%. This decision makes sure every region does.");
 }
 
 pres.writeFile({ fileName: DECK }).then(f => console.log("saved", f));

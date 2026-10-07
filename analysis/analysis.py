@@ -77,8 +77,8 @@ share = prio.users_to_convert / prio.users_to_convert.sum() * BUDGET_M
 alloc = share.round().astype(int)
 alloc[alloc.idxmax()] += BUDGET_M - alloc.sum()  # keep total exactly SAR 40M
 prio["allocation_sar_m"] = alloc
-prio["pace_needed_by_jun26"] = prio.gap_pts / 6
-prio["pace_needed_by_dec26"] = prio.gap_pts / 12
+prio["pace_needed_6m"] = prio.gap_pts / 6
+prio["pace_needed_12m"] = prio.gap_pts / 12
 reg = reg.join(prio[["allocation_sar_m"]]).fillna({"allocation_sar_m": 0})
 
 # ---------- Supporting cuts ----------
@@ -180,4 +180,4 @@ print(f"National Dec 2025: {national.iloc[-1]:.2f}% (crossed 65% in {crossed:%b 
 print(reg[["adoption_pct", "gap_pts", "monthly_pace_pts", "months_to_target", "status", "allocation_sar_m"]].round(2))
 print(category.round(2))
 print(channel.round(2))
-print(prio[["gap_pts", "monthly_pace_pts", "pace_needed_by_jun26", "pace_needed_by_dec26", "allocation_sar_m"]].round(2))
+print(prio[["gap_pts", "monthly_pace_pts", "pace_needed_6m", "pace_needed_12m", "allocation_sar_m"]].round(2))

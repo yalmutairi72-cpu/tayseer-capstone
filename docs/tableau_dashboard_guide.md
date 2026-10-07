@@ -15,7 +15,7 @@ Follows Lab 4 (required core), then adds two views that carry the capstone evide
 
 **Expected Regional Adoption (Dec 2025):** Najran 60.9 · Northern Borders 62.7 · Al-Baha 62.8 · Jazan 63.0 · Asir 64.4 · Tabuk 64.5 · Hail 64.7 · Al-Jouf 64.8 · Qassim 66.1 · Madinah 68.2 · Eastern Province 68.7 · Makkah 70.7 · Riyadh 70.8
 
-## Added views (supporting slides 2 and 4)
+## Optional added views (not in the published dashboard; the same evidence is in `outputs/charts/`)
 
 ### National Trend (slide 2)
 - `MONTH(Month)` (continuous) → Columns, `Digital Adoption %` → Rows, Line.
