@@ -112,4 +112,4 @@ python3 -m venv .venv && .venv/bin/pip install pandas matplotlib python-pptx
 
 ## Acknowledgements
 
-Built for the [SDAIA Academy]([https://github.com/SDAIA-Academy](https://github.com/SDAIAAcademy)) Data Visualization & Storytelling program (SDA-DSC-112).
+Built for the [SDAIA Academy]([https://github.com/SDAIAAcademy](https://github.com/SDAIAAcademy)) Data Visualization & Storytelling program (SDA-DSC-112).
