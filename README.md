@@ -43,11 +43,9 @@ The speaker script for each slide is in the PowerPoint **speaker notes**. Q&A pr
 - **National Trend**: monthly adoption Jan 2022 – Dec 2025, with the 65% line and a marker at **Aug 2025**, when the target was crossed (slide 2)
 - **Months to 65%**: the 8 below-target regions, months to reach 65% at the 2025 pace, with a 6-month line. Orange = needs funding (slide 4)
 - **Regional Adoption**: regions sorted lowest to highest, with a **65% target reference line**. Regions below target are coloured orange (slide 3)
-- **Service Gap**: adoption by service category in the 4 priority regions vs national, Dec 2025. Complaints is the weakest (56.8% vs 62.1%) (slide 4)
-- **Adoption by Channel**: Dec 2025. Branch 53.3% vs Mobile App 75.3% (slide 6)
 - **Region filter**: multiple-values dropdown, default = All
 
-Every number on the slides can be found on the dashboard.
+The headline numbers on the slides (66.2%, Aug 2025, regional adoption, months to target) are all on the dashboard. Supporting details (service-category and channel adoption) come from `analysis/analysis.py` (`outputs/category_priority_regions.csv`, `outputs/channel_summary.csv`).
 
 Key calculated fields:
 

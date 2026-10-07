@@ -15,7 +15,7 @@ Follows Lab 4 (required core), then adds two views that carry the capstone evide
 
 **Expected Regional Adoption (Dec 2025):** Najran 60.9 · Northern Borders 62.7 · Al-Baha 62.8 · Jazan 63.0 · Asir 64.4 · Tabuk 64.5 · Hail 64.7 · Al-Jouf 64.8 · Qassim 66.1 · Madinah 68.2 · Eastern Province 68.7 · Makkah 70.7 · Riyadh 70.8
 
-## Added views (published, supporting slides 2, 4 and 6)
+## Added views (published, supporting slides 2 and 4)
 
 ### National Trend (slide 2)
 - `MONTH(Month)` (continuous) → Columns, `Digital Adoption %` → Rows, Line.
@@ -36,16 +36,6 @@ Funding Need        = IF [Months to Target] > 6 THEN "Needs funding (> 6 months)
 
 - Region → Rows, `Months to Target` → Columns, `Funding Need` → Colour (exclude "Already at 65%"), constant line at 6.
 - `analysis/analysis.py` uses the same year-over-year pace, so the months match slide 4 exactly: Najran 19, Northern Borders 11, Jazan 8, Al-Baha 7.
-
-### Service Gap (slide 4)
-```
-Adoption % (4 priority regions) = user-weighted adoption, Dec 2025, Region in (Najran, Northern Borders, Al-Baha, Jazan)
-National (Dec 2025)             = user-weighted adoption, Dec 2025, all regions
-```
-- Service Category → Rows, both fields → Columns, show labels. **Expected: Complaints 56.8 vs 62.1.**
-
-### Adoption by Channel (slide 6)
-- Channel → Rows, `National (Dec 2025)` → Columns, show labels. **Expected: Branch 53.3, Mobile App 75.3.**
 
 ## Step 7: dashboard test
 Ask a partner who hasn't seen the dashboard: *"Which regions are below the 65% target?"* Record the time taken, whether the answer was correct, and anything that confused them. Put the result here:
