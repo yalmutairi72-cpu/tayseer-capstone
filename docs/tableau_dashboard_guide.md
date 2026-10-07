@@ -15,7 +15,7 @@ Follows Lab 4 (required core), then adds two views that carry the capstone evide
 
 **Expected Regional Adoption (Dec 2025):** Najran 60.9 · Northern Borders 62.7 · Al-Baha 62.8 · Jazan 63.0 · Asir 64.4 · Tabuk 64.5 · Hail 64.7 · Al-Jouf 64.8 · Qassim 66.1 · Madinah 68.2 · Eastern Province 68.7 · Makkah 70.7 · Riyadh 70.8
 
-## Optional added views (not in the published dashboard; the same evidence is in `outputs/charts/`)
+## Added views (published, supporting slides 2, 4 and 6)
 
 ### National Trend (slide 2)
 - `MONTH(Month)` (continuous) → Columns, `Digital Adoption %` → Rows, Line.
@@ -31,11 +31,21 @@ Adoption Dec 2024   = (same, with #2024-12-01#)
 Monthly Pace        = ([Adoption Dec 2025] - [Adoption Dec 2024]) / 12
 Gap to Target       = MAX(65 - [Adoption Dec 2025], 0)
 Months to Target    = [Gap to Target] / [Monthly Pace]
-Priority            = IF [Months to Target] > 6 THEN "Priority" ELSEIF [Gap to Target] > 0 THEN "Near target" ELSE "On target" END
+Funding Need        = IF [Months to Target] > 6 THEN "Needs funding (> 6 months)" ELSEIF [Months to Target] > 0 THEN "Reaches 65% on its own" ELSE "Already at 65%" END
 ```
 
-- Filter `Gap to Target > 0`, Region → Rows, `AVG([Months to Target])` → Columns, `Priority` → Colour, reference line at 6.
-- The year-over-year version gives slightly different month counts from the Python linear trend (Najran ≈ 19 vs 21), but **the same four priority regions**. Say this if you're asked.
+- Region → Rows, `Months to Target` → Columns, `Funding Need` → Colour (exclude "Already at 65%"), constant line at 6.
+- `analysis/analysis.py` uses the same year-over-year pace, so the months match slide 4 exactly: Najran 19, Northern Borders 11, Jazan 8, Al-Baha 7.
+
+### Service Gap (slide 4)
+```
+Adoption % (4 priority regions) = user-weighted adoption, Dec 2025, Region in (Najran, Northern Borders, Al-Baha, Jazan)
+National (Dec 2025)             = user-weighted adoption, Dec 2025, all regions
+```
+- Service Category → Rows, both fields → Columns, show labels. **Expected: Complaints 56.8 vs 62.1.**
+
+### Adoption by Channel (slide 6)
+- Channel → Rows, `National (Dec 2025)` → Columns, show labels. **Expected: Branch 53.3, Mobile App 75.3.**
 
 ## Step 7: dashboard test
 Ask a partner who hasn't seen the dashboard: *"Which regions are below the 65% target?"* Record the time taken, whether the answer was correct, and anything that confused them. Put the result here:

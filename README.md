@@ -40,18 +40,26 @@ The speaker script for each slide is in the PowerPoint **speaker notes**. Q&A pr
 **Tayseer: Digital Adoption** (Tableau Public) is the main evidence source:
 
 - **KPI**: national digital adoption for the latest month (Dec 2025): **66.2%**
-- **Regional Adoption**: regions sorted lowest to highest, with a **65% target reference line**. Regions below target are coloured orange.
+- **National Trend**: monthly adoption Jan 2022 – Dec 2025, with the 65% line and a marker at **Aug 2025**, when the target was crossed (slide 2)
+- **Months to 65%**: the 8 below-target regions, months to reach 65% at the 2025 pace, with a 6-month line. Orange = needs funding (slide 4)
+- **Regional Adoption**: regions sorted lowest to highest, with a **65% target reference line**. Regions below target are coloured orange (slide 3)
+- **Service Gap**: adoption by service category in the 4 priority regions vs national, Dec 2025. Complaints is the weakest (56.8% vs 62.1%) (slide 4)
+- **Adoption by Channel**: Dec 2025. Branch 53.3% vs Mobile App 75.3% (slide 6)
 - **Region filter**: multiple-values dropdown, default = All
-- The national trend and months-to-target views are **not in the published dashboard**. They are produced by `analysis/analysis.py` (`outputs/charts/`), and the guide documents how to add them in Tableau.
+
+Every number on the slides can be found on the dashboard.
 
 Key calculated fields:
 
 ```
 Digital Adoption %  = SUM([Digital Adoption Pct] / 100 * [Unique Users]) / SUM([Unique Users]) * 100
 Target Status       = IF [Digital Adoption %] < 65 THEN "Below Target" ELSE "On/Above Target" END
+Adoption Dec 2025   = { FIXED [Region] : user-weighted adoption where [Month] = #2025-12-01# }   (same for Dec 2024)
+Months to Target    = MAX(65 - [Adoption Dec 2025], 0) / (([Adoption Dec 2025] - [Adoption Dec 2024]) / 12)
+Funding Need        = IF [Months to Target] > 6 THEN "Needs funding (> 6 months)" ELSEIF [Months to Target] > 0 THEN "Reaches 65% on its own" ELSE "Already at 65%" END
 ```
 
-Build steps and the optional extra views are in [`docs/tableau_dashboard_guide.md`](docs/tableau_dashboard_guide.md).
+Build steps for every view are in [`docs/tableau_dashboard_guide.md`](docs/tableau_dashboard_guide.md).
 
 ## Method
 
