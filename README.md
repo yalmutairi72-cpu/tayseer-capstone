@@ -29,9 +29,9 @@ We used Tayseer's monthly service data (Jan 2022 to Dec 2025, 13 regions, 8 serv
 | 2 | Situation | Nationally on track: 66.2%, above 65% since Aug 2025 | Yousef Almutairi | 0:30–1:15 |
 | 3 | Complication | 8 of 13 regions are still below 65%; the national average hides them | Abdulwahab Alnassar | 1:15–2:00 |
 | 4 | Evidence | Four regions self-close within 3 months; four don't, and Najran needs 19 | Abdulwahab Alnassar | 2:00–4:00 |
-| 5 | Options | Three ways to spend SAR 40M; only one aims every riyal at a gap that won't close by itself | Firas Alnasser | 4:00–5:00 |
-| 6 | Recommendation | Option B: weight by gap, bring all four to 65% by Dec 2027 | Firas Alnasser | 5:00–6:15 |
-| 7 | Ask + Next step | Approve SAR 40M in two tranches with a June 2027 checkpoint | Firas Alnasser | 6:15–7:00 |
+| 5 | Options | Three ways to spend SAR 40M; only one aims every riyal at a gap that won't close by itself | Feras Alnasser | 4:00–5:00 |
+| 6 | Recommendation | Option B: weight by gap, bring all four to 65% by Dec 2027 | Feras Alnasser | 5:00–6:15 |
+| 7 | Ask + Next step | Approve SAR 40M in two tranches with a June 2027 checkpoint | Feras Alnasser | 6:15–7:00 |
 
 The speaker script for each slide is in the PowerPoint **speaker notes**. Q&A preparation is in [`docs/qa_prep.md`](docs/qa_prep.md).
 
